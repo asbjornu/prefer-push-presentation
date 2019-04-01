@@ -218,7 +218,16 @@ HTTP/2.0 200 OK
                     <ul>
                         <li>Link relations and object graphs, not URIs</li>
                         <li>Possibly backwards compatible with HTTP/1.1</li>
-                        <li></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Performance</h1>
+                    <ul>
+                        <li>Naïve testing shows 20-30% improvement</li>
+                        <li>Much more performant than inline expansion</li>
+                        <li>URI for each pushed resource: Happy cache</li>
+                        <li>Avoids infinite nested loops since identity (URI) is preserved</li>
                     </ul>
                 </section>
             </div>
