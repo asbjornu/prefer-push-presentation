@@ -43,6 +43,31 @@
 				</section>
 
 				<section>
+					<h2>OData <code>$expand</code></h2>
+					
+					<pre><code data-trim data-noescape>
+						GET /heroes/r2d2?<strong>$expand=hero.friends</strong>&$select=hero.id,hero.name,hero.height HTTP/1.1
+					</code></pre>
+
+					⬇︎
+
+					<pre><code data-trim>
+HTTP/1.1 200 OK
+
+{
+  "hero": {
+    "id": "/heroes/r2d2",
+    "name": "R2-D2",
+    "height": 1.09,
+    "friends": [
+      { "id": "/heroes/luke-skywalker", "name": "Luke Skywalker", "height": 1.72 },
+      { "id": "/heroes/han-solo", "name": "Han Solo", "height": 1.85 },
+      { "id": "/heroes/leia-organa", "name": "Leia Organa", "height": 1.54 }
+    ]
+  }
+}
+					</code></pre>
+				</section>				<section>
 					<h2><code>Prefer-Push</code></h2>
 
 					<pre><code data-trim data-noescape>
