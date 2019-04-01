@@ -41,7 +41,49 @@
 
 				<section data-background-image="images/transclusion.svg" data-background-size="contain">
 				</section>
-			</div>
+
+				<section>
+					<pre><code data-trim data-noescape>
+GET /heroes/r2d2 HTTP/2.0
+<strong>Prefer-Push: friends</strong>
+					</code></pre>
+					<pre><code data-trim>
+HTTP/2.0 200 OK
+
+{
+	"hero": {
+		"name": "R2-D2",
+		"height": 1.09,
+		"friends": [
+			{ "id": "/heroes/luke-skywalker" },
+			{ "id": "/heroes/han-solo" },
+			{ "id": "/heroes/leia-organa" }
+		]
+	}
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code data-trim>
+:path /heroes/luke-skywalker
+
+{ "hero": { "name": "Luke Skywalker", "height": 1.72 }}
+					</code></pre>
+
+					<pre><code data-trim>
+:path /heroes/han-solo
+
+{ "hero": { "name": "Han Solo", "height": 1.85 }}
+						</code></pre>
+							
+						<pre><code data-trim>
+:path /heroes/leia-organa
+
+{ "hero": { "name": "Leia Organa", "height": 1.54 }}
+						</code></pre>
+								
+				</section>			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
