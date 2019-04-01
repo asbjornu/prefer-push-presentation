@@ -154,7 +154,7 @@ Content-Type: application/json
                 </section>
 
                 <section>
-                    <h2>Apollo GraphQL Sub-selection with <code>@defer</code></h2>
+                    <h2>Apollo GraphQL sub-selection with <a href="https://www.apollographql.com/docs/react/features/defer-support"><code>@defer</code></a></h2>
 
                     <pre style="width: 25%; float: left"><code data-trim data-noescape>
 POST /query HTTP/1.1
@@ -205,6 +205,13 @@ Content-Type: application/json
 --hero--
 
                     </code></pre>
+
+                    <aside class="notes">
+                        Apollo's GraphQL implementation has an interesting extension to
+                        sub-selection which allows you to "defer" the sub-selections,
+                        which will send them as null in the initial response and then
+                        fill them up later with multipart.
+                    </aside>
                 </section>
 
                 <section>
